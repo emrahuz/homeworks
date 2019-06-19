@@ -1,0 +1,81 @@
+#1.soru:
+#Input ile kullanıcıdan bir kelime yazmasını isteyip,
+#bu kelimeyi altı çizili ve etrafı desenli bir şekilde printleyin.
+
+ad=input("Adınız :")
+"_"*len(ad)
+print(""". . * . . * . . * . .\n . . \ . .|. . / . .\n """)
+
+print("    ","Merhaba"," ",ad,"\n","    ",
+      "_"*int(len("Merhaba ")),"_"*len(ad),"\n",sep="")
+
+print(""" . . / . .|. . \ . . \n. . * . . * . . * . .""")
+
+#2.soru:
+#Kullanıcıdan input ile km cinsinden mesafe bilgisi alıp, bu bilgiyi mile
+#dönüştürün ve sonucu ekrana printleyin.
+#1km, 0,6214mile
+
+yol=float(input("Kaç km yol gittiniz? :"))
+mile=float(0.6214)
+sonuc=yol*mile
+print(yol,"km gittiğiniz yol aynı zamanda",sonuc,"mile mesafeye eşittir.")
+
+#3.soru:
+#Oğrenci not ortalama programi
+#Kullanicidan input ile ad-soyad, vize, final ve ders takip
+#bilgilerini alip bu degerleri yuzdelik oranlarina gore hesaplayin ve
+#yil sonu notunu cikarin.
+
+ad=input("Adınız                                :")
+soyad=input("Soyadınız                             :")
+vize=float(input("Matematik Dersi vize notunuz(0-100)    :"))
+final=float(input("Matematik Dersi final notunuz(0-100)  :"))
+ders=float(input("Bu derse kaç kez devamsızlık yaptınız(0-20) :"))
+ders_puan=100-int(ders*5)
+puan=float(vize*30/100)+float(final*50/100)+float(ders_puan*20/100)
+print("Tebrikler! Matematik Dersi için yıl sonu itibariyle ortalama",
+      puan,"puan aldınız.")
+
+#4.soru:
+#Faiz hesaplama programi
+Anapara=int(input("Yatırmak istediginiz toplam tutar(Anapara) :"))
+Faiz_suresi=int(input("Faizde kalmasını istediginiz sure(Faiz suresi-yıl) :"))
+Faiz_orani=float(input("Kullanmak istediginiz faiz oranını belirtiniz(Faiz oranı) :"))
+Faiz_tutari=Anapara*Faiz_suresi*Faiz_orani/100
+Faiz_aylik=Faiz_tutari/(Faiz_suresi*12)
+Faiz_gunluk=Faiz_tutari/(Faiz_suresi*360)
+print(Anapara,"euro için yuzde",Faiz_orani,"(yillik) faiz orani ile",Faiz_suresi,
+      "yil sonunda alacaginiz faiz tutarı",Faiz_tutari,"euro'dur.","\n",
+      "Toplam miktar ise",Anapara+Faiz_tutari,"euro'dur.")
+print("Bu oranla 1 aylik faiz miktari",Faiz_aylik,"euro'dur.","\n",
+      "Toplam miktar ise",Anapara+Faiz_aylik,"euro'dur.")
+print("Bu oranla 1 gunluk faiz miktari",Faiz_gunluk,"euro'dur.","\n",
+      "Toplam miktar ise",Anapara+Faiz_gunluk,"euro'dur.")
+
+#5.soru:
+#Aylik masraf programi
+print("Aylik Masraf Programi")
+print("Aylik gelir ve harcama miktarlarinizi asagida belirtir misiniz?")
+gelir=input("Aylik geliriniz kaç euro'dur? :")
+mutfak=input("Mutfak harcamalarınız :")
+egitim=input("Egitim harcamalarınız :")
+giyim=input("Giyim harcamalarınız :")
+ulasim=input("Ulasim harcamalarınız :")
+masraf=float(int(mutfak)+int(egitim)+int(giyim)+int(ulasim))
+oran=float(int(masraf)/int(gelir))
+print("Aylik",gelir,"euro gelirinize karşılık aylık toplam masrafiniz",
+      masraf,"euro'dur.","\n","Bu masraflarinizin aylik gelirinize orani ise",
+      oran,"seklindedir.","\n","Yani gelirinizin yuzde",oran*100,
+      "kadarini masraflariniza ayirmalisiniz.")
+
+
+#6.soru:
+print("""Python'un kurucusu Guido Van Rossum, Hollanda’nin
+Amsterdam’daki  "Universiteit Van Amsterdam" okulundan
+1982’de mezun olmuştur.""")
+
+print("Python'un kurucusu Guido Van Rossum, Hollanda’nin\nAmsterdam’daki 'Universiteit Van Amsterdam' okulundan\n1982’de mezun olmuştur.")
+
+information=("Python'un kurucusu Guido Van Rossum, Hollanda’nin\nAmsterdam’daki 'Universiteit Van Amsterdam' okulundan\n1982’de mezun olmuştur.")
+print(information)
