@@ -1,7 +1,6 @@
 #1.soru:
 #Input ile kullanıcıdan bir kelime yazmasını isteyip,
 #bu kelimeyi altı çizili ve etrafı desenli bir şekilde printleyin.
-
 ad=input("Adınız :")
 "_"*len(ad)
 print(""". . * . . * . . * . .\n . . \ . .|. . / . .\n """)
@@ -36,6 +35,11 @@ ders_puan=100-int(ders*5)
 puan=float(vize*30/100)+float(final*50/100)+float(ders_puan*20/100)
 print("Tebrikler! Matematik Dersi için yıl sonu itibariyle ortalama",
       puan,"puan aldınız.")
+dosya=open("OgrenciNotHesaplama.txt", "w")
+print("Tebrikler",ad,soyad,"Matematik Dersi vize notunuz",vize,",final notunuz",
+      final,",katılamadiginiz ders sayısı",ders,"ile yil sonu ortalama puanınız",
+      puan,"olarak hesaplanmistir.",file=dosya)
+dosya.close()
 
 #4.soru:
 #Faiz hesaplama programi
@@ -52,6 +56,15 @@ print("Bu oranla 1 aylik faiz miktari",Faiz_aylik,"euro'dur.","\n",
       "Toplam miktar ise",Anapara+Faiz_aylik,"euro'dur.")
 print("Bu oranla 1 gunluk faiz miktari",Faiz_gunluk,"euro'dur.","\n",
       "Toplam miktar ise",Anapara+Faiz_gunluk,"euro'dur.")
+dosya=open("FaizHesaplama.txt", "w")
+print("Merhaba",Anapara,"euro paraniz",Faiz_orani,"(yillik) faiz orani ile",
+      Faiz_suresi,"yil sonunda",Faiz_tutari,"euro faiz ile birlikte toplam miktar",
+      Anapara+Faiz_tutari,"euro olacaktır.",
+      "Tercihinizle ilgili bu hesaplamalara gore 1 aylik faiz miktari",
+      Faiz_aylik,"euro'dur,"," 1 gunluk faiz miktari ise",
+      Faiz_gunluk,"euro'dur.",file=dosya)
+dosya.close() 
+
 
 #5.soru:
 #Aylik masraf programi
@@ -68,6 +81,12 @@ print("Aylik",gelir,"euro gelirinize karşılık aylık toplam masrafiniz",
       masraf,"euro'dur.","\n","Bu masraflarinizin aylik gelirinize orani ise",
       oran,"seklindedir.","\n","Yani gelirinizin yuzde",oran*100,
       "kadarini masraflariniza ayirmalisiniz.")
+dosya=open("aylikmasraf.txt", "w")
+print("Merhaba aylik",gelir,"euro gelir ve bu gelire karşilik aylik toplam masrafiniz",
+      masraf,"euro'dur.","\n","Bu masraflarinizin aylik gelirinize orani ise",
+      oran,"seklindedir.","\n","Yani gelirinizin yuzde",oran*100,
+      "kadarini masraflariniza ayirmalisiniz.",file=dosya)
+dosya.close()
 
 
 #6.soru:
