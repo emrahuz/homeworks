@@ -1,0 +1,3 @@
+Merhaba aylik 1000 euro gelir ve bu gelire karþilik aylik toplam masrafiniz 250.0 euro'dur. 
+ Bu masraflarinizin aylik gelirinize orani ise 0.25 seklindedir. 
+ Yani gelirinizin yuzde 25.0 kadarini masraflariniza ayirmalisiniz.
