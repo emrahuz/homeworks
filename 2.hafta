@@ -1,0 +1,37 @@
+#1.ODEV: BURCUN NE?
+
+#Kullanicidan dogum gununu ve ayini girmesini istiyoruz.
+
+print("!"*10,"Burcun Ne!","!"*10)
+while True:
+    gun=int(input("Dogdugunuz gunu giriniz: "))
+    ay=int(input("Kacinci ayda dogdunuz: "))
+    if(ay==3 and 21<=gun<=31)or(ay==4 and 1<=gun<=20):
+        print("Yapilan hesaplamalar sonucu burcunuz Koc olarak belirlenmistir.")
+    elif(ay==4 and 21<=gun<=30)or(ay==5 and 1<=gun<=21):
+        print("Yapilan hesaplamalar sonucu burcunuz Boga olarak belirlenmistir.")
+    elif(ay==5 and 22<=gun<=31)or(ay==6 and 1<=gun<=22):
+        print("Yapilan hesaplamalar sonucu burcunuz İkizler olarak belirlenmistir.")
+    elif(ay==6 and 23<=gun<=30)or(ay==7 and 1<=gun<=22):
+        print("Yapilan hesaplamalar sonucu burcunuz Yengec olarak belirlenmistir.")
+    elif(ay==7 and 23<=gun<=31)or(ay==8 and 1<=gun<=22):
+        print("Yapilan hesaplamalar sonucu burcunuz Aslan olarak belirlenmistir.")
+    elif(ay==8 and 23<=gun<=31)or(ay==9 and 1<=gun<=22):
+        print("Yapilan hesaplamalar sonucu burcunuz Basak olarak belirlenmistir.")
+    elif(ay==9 and 23<=gun<=30)or(ay==10 and 1<=gun<=22):
+        print("Yapilan hesaplamalar sonucu burcunuz Terazi olarak belirlenmistir.")
+    elif(ay==10 and 23<=gun<=31)or(ay==11 and 1<=gun<=21):
+        print("Yapilan hesaplamalar sonucu burcunuz Akrep olarak belirlenmistir.")
+    elif(ay==11 and 22<=gun<=30)or(ay==12 and 1<=gun<=21):
+        print("Yapilan hesaplamalar sonucu burcunuz Yay olarak belirlenmistir.")
+    elif(ay==12 and 22<=gun<=31)or(ay==1 and 1<=gun<=21):
+        print("Yapilan hesaplamalar sonucu burcunuz Oglak olarak belirlenmistir.")
+    elif(ay==1 and 22<=gun<=31)or(ay==2 and 1<=gun<=19):
+        print("Yapilan hesaplamalar sonucu burcunuz Kova olarak belirlenmistir.")
+    elif(ay==2 and 20<=gun<=29)or(ay==3 and 1<=gun<=20):
+        print("Yapilan hesaplamalar sonucu burcunuz Balik olarak belirlenmistir.")
+    else:
+        print("Dogum gun ve ayinizi dogru girerek tekrar deneyiniz...")
+    break
+#Tum hesaplamalar sonucunda program kullanicinin
+#hangi burc oldugunu soyluyor..
