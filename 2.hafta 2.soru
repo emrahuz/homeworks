@@ -1,0 +1,31 @@
+#2.ODEV: UZAKLIK BIRIMI DONUSUMU
+
+#Kullaniciya 2 adet secenek sunuyoruz:
+#km-mil donusumu mu yapmak istiyor, mil-km donusumu mu yapmak istiyor.
+#Ve donusturmek istedigi birimin uzunlugunu girmesini istiyoruz?
+print("""
+UZAKLIK BIRIMI DONUSUMU
+\nİslemler:
+Km-Mil donusumu yapmak istiyorsaniz: 1
+Mil-Km donusumu yapmak istiyorsaniz: 2
+Çikmak istiyorsaniz                : q
+
+Yapmak istediginiz islemi secip ardindan Enter tusuna basiniz.\n""")
+#   Kullanici eger programdan cikmak istiyorsa "q" tusuna basabilir.
+
+while True:
+    islem=input("Yapmak istediğiniz islemi seciniz: ")
+    if islem=="q":
+      print("cikis gerceklestiriliyor...")
+      break
+    elif islem=="1":
+      km=float(input("Kilometre giriniz: "))
+      kmmil=km*0.621371
+      print(km,"km=",kmmil,"mil eder.")
+    elif islem=="2":
+      mil=float(input("Mil giriniz: "))
+      milkm=mil/0.621371
+      print(mil,"Mil=",milkm,"km eder.")
+      
+ #   Aksi halde program surekli calismaya devam eder.     
+
