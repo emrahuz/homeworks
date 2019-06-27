@@ -1,0 +1,49 @@
+#4.ODEV: SAYI TAHMIN OYUNU
+
+print("""
+            ###  SAYI TAHMIN OYUNU ###
+    Oyunu kazanmak için en fazla 5 deneme
+                 hakkınız var.
+    5.denemeden sonra sonucu bilmeniz oyunu
+            kazanmaniza yetmeyecektir.
+                !!!Bol Sanslar!!!
+            """)
+    
+sayi=7
+
+#Bu degiskene 1-10 arasinda bir sayi atadik ve kullanicidan
+#bu sayiyi tahmin etmesini istiyoruz.
+
+tahmin=0
+#Kullanici 5 ya da 4 denemede bilirse 1 yildiz kazanir.
+#3 ya da 2 denemede bilirse 2 yildiz kazanir.
+#1 denemede bilirse 3 yildiz kazanir.
+
+#Tum yarismaci pythonculara basarilar...
+
+while True:
+
+    deneme=int(input("Tahmininizi giriniz (0-10): "))
+    
+    tahmin+=1
+    if tahmin==1 and deneme==sayi:
+        print("Tebrikler ilk denemenizde sayi tahmin oyununu 3 yildizla kazandiniz.")
+        break
+    elif tahmin==2 and deneme==sayi:
+        print("Tebrikler ikinci denemenizde sayi tahmin oyununu 2 yildizla kazandiniz.")
+        break
+    elif tahmin==3 and deneme==sayi:
+        print("Tebrikler ucuncu denemenizde sayi tahmin oyununu 2 yildizla kazandiniz.")
+        break
+    elif tahmin==4 and deneme==sayi:
+        print("Tebrikler dorduncu denemenizde sayi tahmin oyununu 1 yildizla kazandiniz.")
+        break
+    elif tahmin==5 and deneme==sayi:
+        print("Tebrikler besinci denemenizde sayi tahmin oyununu 1 yildizla kazandiniz.")
+        break
+    elif tahmin>5 and deneme==sayi:
+        print("Sonucu dogru bilseniz bile 5 deneme hakkinizda basarisiz oldunuz.")
+        break
+    else:
+        print("Yanlis tahmin, yeniden deneyiniz...")
+       
