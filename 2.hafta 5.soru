@@ -1,0 +1,73 @@
+#ATM
+#Kullanicinin hesabinda 1000 € var.
+#Kullaniciya hangi islemi yapmak istedigini soruyoruz.
+#Kullanicinin yapabilecegi islemler:
+
+bsn=input("Lutfen BSN numaranizi girer misiniz: ")
+print("""
+                ###  ATM   ###
+                
+        Sayin "{}" numarali musterimiz,
+    
+        Yapmak istediginiz islemi asagidaki
+            menuden secebilirsiniz:
+            
+            1- Bakiye Kontrolu
+            2- Para Yatirma
+            3- Para Cekme
+
+         Cikmak icin q'ya basiniz.
+            """.format(bsn))
+
+bakiye=1000
+islem=0
+#        1-bakiye kontrolu
+while islem==0:
+    secim=input("Yapmak istediginiz islemi secer misiniz: ")
+    
+    if secim=="q" or secim=="Q":
+        print("Cikis yapiliyor...Yine Bekleriz...")
+        islem=1
+    elif secim=="1":
+        print("Bakiyenizde",bakiye,"euro para vardir.\n")
+        baska=input("Baska bir islem yapmak ister misiniz?(Y/N): ")
+        if baska=="Y" or baska=="y":
+            islem=0
+        else:
+            print("Cikis yapiliyor...Yine Bekleriz...")
+            islem=1
+
+#        2-para yatirma        
+
+    elif secim=="2":
+        parayatir=int(input("Yatirmak istediginiz miktari giriniz: "))
+        print("Yatirmak istediginiz tutar",parayatir,"olarak dogrulanmistir.\n")
+        print("Guncel bakiyeniz:",bakiye+parayatir,"'euro'dur.\n")
+        baska=input("Baska bir islem yapmak ister misiniz?(Y/N): ")
+        if baska=="Y" or baska=="y":
+            islem==0
+        else:
+            print("Cikis yapiliyor...Yine Bekleriz...")
+            islem=1
+#        3-para cekme
+#Kullanici hesabinda olan paradan fazla para cekmek isterse uyariyor
+#ve islemi yapamayacagini soyluyoruz.
+#    2. ve 3. islemler sonucunda guncel bakiyeyi kullaniciya gosteriyoruz.
+    elif secim=="3":
+        paracek=int(input("Cekmek istediginiz miktari giriniz: "))
+        if paracek>bakiye:
+            print("Bakiyenizden daha yuksek bir meblagi sistemimiz odememektedir.")
+        else:
+            print("Cekmek istediginiz tutar",paracek,"olarak dogrulanmistir.\n")
+            print("Guncel bakiyeniz:",bakiye-paracek,"'euro'dur.\n")
+        baska=input("Baska bir islem yapmak ister misiniz?(Y/N): ")
+        if baska=="Y" or baska=="y":
+            islem==0
+        else:
+            print("Cikis yapiliyor...Yine Bekleriz...")
+            islem=1
+    else:
+        print("Yanlış giriş.")
+        print("Yapmak istediginiz islemi dogru girer misiniz: ")
+#Baska bir islem yapmak isteyip istemedigini sorup islemi bitiriyoruz.          
+    
