@@ -1,0 +1,38 @@
+#3.ODEV: PAROLA KARAKTER KONTROLU
+dosya=open("PAROLA KARAKTER KONTROLU.txt", "w")
+print("Tebrikler!",file=dosya)
+print("""
+Dünyanın en gelişmiş PyCoders hizmetine hoşgeldiniz.
+Yalnız hizmetimizden yararlanmak için önce sisteme giriş yapmalısınız.
+
+(Kullanıcı adınız 3-18 karakter araliginda olmali ve rakam icermemelidir)
+(Parolanız 6-12 karakter araliginda olmalidir.)\n""")
+#Kullanicidan 3-18 karakter arasinda bir username olusturmasini istiyoruz.
+#Eger usernamede rakam varsa, rakam kullanamayacagi uyarisini yapiyoruz.
+anahtar=0
+while anahtar==0:
+    username=input("Kullanıcı adınız: ")
+    rakamlar="0123456789"
+    if (3>len(username))or(len(username)>18):
+        print ("Username 3 karakterden kısa 18 karakterden uzun olamaz.")
+    for karakter in username:
+        if (karakter in rakamlar):
+            print("Username girerken rakam kullanilamaz.")
+            break
+        else:
+             anahtar=1
+    else:
+        pass
+#Simdi de kullanicidan 6 ile 12 karakter araliginda bir parola girmesini
+#istiyoruz. Olusturulan parolanin 6 ile 12 karakter disinda olmamali.
+anahtar=1
+while anahtar==1:
+    parola=input("Parolanız: ")
+    if (6>len(parola))or(len(parola)>12):
+        print ("Parolaniz 6 karakterden kısa 12 karakterden uzun olamaz.")
+    else:
+        print("\nKullanici adiniz:",username,"\n\nParolaniz:",parola)
+        break
+    dosya.close()
+#Iki durumun sartlari da saglaniyorsa username ve parolayi hem ekrana
+#printliyoruz hem de bir dosyaya kaydetmis oluyoruz.
