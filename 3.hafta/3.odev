@@ -1,0 +1,28 @@
+#hata denetimi icin try, except'i kullanıyoruz.
+try:
+    #futbolcular.txt dosyasındaki listeyi kullanip 3 ayrı gruba
+    #ayiklama yapalim.
+    with open("futbolcular.txt","r") as file:
+        file.readline()
+        for line in file: # for dongudu ile dosyayı satır satır okusun
+           if "Fenerbahce" in line: #icinde fenerbahce gecen satirlari alsin
+               with open("Fenerbahce.txt","a") as file: #bunu da ayri bi dosyaya yazdiralim
+                   file.write(line)
+                   with open("Fenerbahce.txt","r") as file:
+                     file.read()
+                     print(line)
+           if "Galatasaray" in line: #icinde galatasaray gecen satirlari alsin  
+               with open("Galatasaray.txt","a") as file: #bunu da ayri bi dosyaya yazdiralim
+                   file.write(line)
+                   with open("Galatasaray.txt","r") as file:
+                     file.read()
+                     print(line)
+           if "Besiktas" in line: #icinde besiktas gecen satirlari alsin
+               with open("Besiktas.txt","a") as file: #bunu da ayri bi dosyaya yazdiralim
+                   file.write(line)
+                   with open("Besiktas.txt","r") as file:
+                     file.read()
+                     print(line)
+                   
+except FileNotFoundError:
+  print("Kaynak dosyanin dogru yerde oldugundan emin olun...")
