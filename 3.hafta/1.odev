@@ -1,0 +1,35 @@
+try:
+    print(""" Hesap olusturmak icin sizden daha once
+            alinmamis bir kullanici adi ile bir sifre
+            belirlemenizi istiyor ve dogru giris
+            yaptiginizda bunu sisteme kaydediyoruz.
+    """)
+    while True:
+        #Once uzerine yazılabilir sekilde "a" ile dosya aciyoruz.
+
+        with open("Hesap_olusturma.txt", "a") as okuma:
+            kullanici=input("Kullanici adinizi giriniz: ")
+            if kullanici=="": #eger bos gecilirse hata versin istiyoruz.
+                print("Kullanici alani bos birakilamaz!")
+                continue
+            #Actigimiz dosyayi okumasini istiyor ve isine kullanici ismi
+            #kaydetmesini istiyoruz.
+        with open("Hesap_olusturma.txt","r") as f:
+            icerik=f.read()
+            #eger ayni kullanici adi daha once girildiyse uyariip
+            #yeni bir kullanici adi girmesini istiyoruz.
+            if kullanici in icerik:
+                print("Bu kullanici adi daha once alindigi icin lutfen baska bir ad seciniz.")
+                continue
+            else:
+                with open("Hesap_olusturma.txt", "a") as f:
+                    print("Kullanici adi: ",kullanici,file=f)
+           #Son olarak sifre girmesini isteyip kullanici adi ile sifreyi
+            #        cikti veriyoruz.
+        sifre=input("Parolaniz: ")
+        print("Kullanici adiniz: ",kullanici,
+              "Sifreniz: ",sifre,
+              "olarak hesabiniz acilmistir.",end="\n")
+        break
+except:
+        print("\nBir hata olustu lutfen daha sonra tekrar deneyiniz...\n")
