@@ -1,0 +1,35 @@
+#1'den 100'e kadar olan sayilari ilginc bir gruplama yapalim.
+#3'e bolunenlere FIZZ
+#5'e bolunenlere BUZZ
+#hem 3'e hem 5'e yani 15'e bolunenlere FIZZBUZZ diyelim
+try:
+    print("""
+                      FIZZ BUZZ
+                    
+           1'den 100'e kadar olan FIZZ BUZZ
+            sayilari asagida siralanmistir.
+          Sadece 15'e tam bolunebilen sayilar
+                   FIZZ BUZZ'dur.
+                   
+             Bunun disinda sadece 3'e tam
+               bolunebilen sayilar FIZZ,
+               
+              sadece 5'e tam bolunabilen
+                 sayilar da BUZZ'dur.
+                     
+            """)
+    sayi=0
+    while sayi<100:
+        sayi+=1
+        if sayi%15==0: #15'e bolunenlere FIZZBUZZ
+            print("FIZZBUZZ")
+        elif sayi%3==0: #3'e bolunenlere FIZZ
+            print("FIZZ")
+        elif sayi%5==0: #5'e bolunenlere BUZZ
+            print("BUZZ")
+        
+        else:
+            print(sayi)
+except:
+    print("\nBir hata olustu lutfen daha sonra tekrar deneyiniz...\n")
+ 
