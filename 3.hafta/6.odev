@@ -1,0 +1,24 @@
+#Kulanicinin istedigi bir sayinin asal olup olmadigini
+#belirleyebilmek icin asagiidakileri uygulayalim.
+print("""
+           !!!!! ASAL SAYI TESTİ !!!!!
+           
+            Merak ettiginiz herhangi
+             bir sayinin asal olup
+              olmadigini asagida
+              test edebilirsiniz.
+              
+""")
+while True:
+    try:
+        sayac=0
+        sayi=int(input("Sayı: ")) #girilecek verinin integer olmasini saglayalim
+        for i in range(2,sayi):
+              if sayi%i==0: #2 ve kendisine kadar olan sayilara tam bolunebilme durumu varsa asal olmaz
+                print("Girilen sayı Asal degildir","\n")
+                sayac+=1
+                break
+        else:
+            print("Girilen sayı Asaldir","\n")#bu sart disinda asaldir sonucu verir
+    except ValueError:
+            print("lutfen sayi girisi yapiniz")
