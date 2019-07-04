@@ -1,0 +1,77 @@
+#Alan ve hacim hesabi icin kullanicidan secim yapmasini
+#ve secimine gore ilgili bilgileri girmesini istiyoruz.
+print("""
+           !!!     ALAN-HACIM HESAPLAMA    !!!
+
+            Yapmak istediginiz hesaplama icin
+
+                seceneklerden birini secin:
+
+                Alan icin:
+                
+                1- Ucgen
+
+                2- Kare
+
+                3- Dikdortgen
+
+                Hacim icin:
+
+                4- Kup
+
+                5- Kure
+
+                6- Koni
+""")
+while True:
+    #dongu olarak donmesini ve asgidaki formullere gore bilgilerin
+    #hesaplanmasini istiyoruz
+    try:
+        secenek=int(input("Yapmak istediginiz islemi seciniz: "))
+        if secenek==1:
+            kenar=int(input("Alanini bulmak istediginiz ucgenin kenar uzunlugunu girin: "))
+            yukseklik=int(input("O kenara ait yuksekligi giriniz: "))
+            alan=(kenar*yukseklik)/2
+            print("Kenar uzunlugu",kenar,"yuksekligi",
+                  yukseklik,"olan ucgenin alani",alan,"'dir.")
+            break
+        elif secenek==2:
+            kenar=int(input("Alanini bulmak istediginiz karenin kenar uzunlugunu girin: "))
+            alan=kenar*kenar
+            print("Kenar uzunlugu",kenar,"olan karenin alani",alan,"'dir.")
+            break
+        elif secenek==3:
+            kisakenar=int(input("Alanini bulmak istediginiz dikdortgenin kisa kenar uzunlugunu girin: "))
+            uzunkenar=int(input("Alanini bulmak istediginiz dikdortgenin uzun kenar uzunlugunu girin: "))
+            alan=kisakenar*uzunkenar
+            print("Kenar uzunluklari",kisakenar,"ve",uzunkenar,"olan dikdortgenin alani",alan,"'dir.")
+            break
+        elif secenek==4:
+            kenar=int(input("Hacmini bulmak istediginiz kupun kenar uzunlugunu girin: "))
+            hacim=kenar*kenar*kenar
+            print("Kenar uzunlugu",kenar,"olan kupun hacmi",hacim,"'dir.")
+            break
+        elif secenek==5:
+            yaricap=int(input("Hacmini bulmak istediginiz kurenin yaricap uzunlugunu girin: "))
+            hacim=int((4*3.14*yaricap)/3)
+            print("Yaricap uzunlugu",yaricap,"olan kurenin hacmi",hacim,"'dir.")
+            break
+        elif secenek==6:
+            yaricap=int(input("Hacmini bulmak istediginiz koninin yaricap uzunlugunu girin: "))
+            yukseklik=int(input("Hacmini bulmak istediginiz koninin yukseklik uzunlugunu girin: "))
+            hacim=int((3.14*yaricap*yaricap*yukseklik)/3)
+            print("Yaricap uzunlugu",yaricap,"yuksekligi",
+                  yukseklik,"olan koninin hacmi",hacim,"'dir.")
+            break
+        else:
+
+            print("yanlis giris yaptiniz,tekrar deneyiniz")
+
+    except ValueError:
+
+        print("lutfen sayi girisi yapiniz")
+
+    except:
+
+        print("bir hata olustu,lutfen tekrar deneyiniz")
+        
