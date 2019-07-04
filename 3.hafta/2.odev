@@ -1,0 +1,77 @@
+#4.ODEV: SAYI TAHMIN OYUNU
+
+print("""
+            ###  SAYI TAHMIN OYUNU ###
+            
+              1-100 arası sayılardan
+        bakalim kacinci denemenizde oyunu
+                kazanabiliyorsunuz.
+                
+                !!!Bol Sanslar!!!
+            """)
+    
+sayi=33
+
+#Bu degiskene 1-100 arasinda bir sayi atadik ve kullanicidan
+#bu sayiyi tahmin etmesini istiyoruz.
+
+tahmin=1
+#Kullanici kacinci denemede bildigi hakkinda bilgi verilir.
+
+#Tum yarismaci pythonculara basarilar...
+
+while True:
+    try:
+
+        deneme=int(input("Tahmininizi giriniz (0-100): "))
+
+        if  deneme<=0 or deneme>=100:
+            print("\nLutfen 0 ile 100 arasinda bir sayi giriniz.\n")     
+        
+        elif 100>deneme>90:
+            print("Lutfen daha kucuk bir sayi giriniz\n")
+            tahmin+=1
+           
+        elif  91>deneme>80:
+            print("\nLutfen daha da kucuk bir sayi giriniz\n")
+            tahmin+=1
+            
+        elif 81>deneme>70:
+            print("\nLutfen biraz daha kucuk bir sayi giriniz\n")
+            tahmin+=1
+            
+        elif 71>deneme>60:
+            print("\nLutfen biraz biraz daha kucuk bir sayi giriniz\n")
+            tahmin+=1
+           
+        elif 61>deneme>50:
+            print("\nLutfen biraz biraz daha kucuk bir sayi giriniz\n")
+            tahmin+=1
+           
+        elif 51>deneme>40:
+            print("\nLutfen biraz biraz daha kucuk bir sayi giriniz\n")
+            tahmin+=1
+          
+        elif 41>deneme>34:
+            print("\nLutfen az daha kucuk bir sayi giriniz\n")
+            tahmin+=1
+            
+        elif 33>deneme>22:
+            print("\nLutfen biraz daha buyuk bir sayi giriniz\n")
+            tahmin+=1
+            
+        elif 23>deneme>11:
+            print("\nLutfen biraz daha buyuk bir sayi giriniz\n")
+            tahmin+=1
+           
+        elif 12>deneme>0:
+            print("\nLutfen daha buyuk bir sayi giriniz\n")
+            tahmin+=1
+            
+        else:
+            print("\n",tahmin,". denemenizde dogru sonucu buldunuz. Tebrik ederiz.\n")
+            break
+    except:
+        print("\nBir hata olustu lutfen daha sonra tekrar deneyiniz...\n")
+    continue
+
