@@ -1,0 +1,105 @@
+#1.odev
+#Kullanıcıdan bir input alalım.
+#Input'taki küçük harfleri büyük harfe dönüştüren bir program yazalım.
+print("""*******
+        Asagıdaki bosluklari eksiksiz doldurunuz.
+                                                *******
+            """)
+
+soyle=input("Kucuk harflerle yasadıgınız ulkenin adini yaziniz: ")
+buyuk=soyle.upper()
+
+print("\n","\t","YASADIGINIZ SEHIR:",buyuk)
+
+#2.odev
+#Kullanıcıdan bir input alalım. Girmiş olduğu inputta büyük harf sayısı,
+#küçük harf sayısı, rakam sayısı ve bunların haricindeki
+#özel karakter sayılarını veren bir program yazalım.
+print("""*******
+        Asagıdaki bosluklari eksiksiz doldurunuz.
+                                                *******
+            """)
+kucuk=0
+buyuk=0
+sayi=0
+hepsi=0
+bilgi=input("Sirasiyla adinizi,yasadıgınız ulkenin adini-dogum yilinizi yaziniz: ")
+for i in bilgi:
+    if i.isupper()==True:  #inputtaki buyuk harfleri secelim
+        buyuk+=1
+    if i.islower()==True: #inputtaki kucuk harfleri secelim
+        kucuk+=1
+    if i.isdigit()==True:  #inputtaki rakamlari secelim
+        sayi+=1
+    if i.isspace()==True: #boslugu saymayalim
+        pass
+    else : 
+        hepsi+=1
+print(buyuk,"adet buyuk harf",kucuk,"adet kucuk harf",sayi,"adet rakam",
+      hepsi-(kucuk+buyuk+sayi),"adet ozel karakter vardir")
+
+
+#3.odev
+#Kullanıcıdan bir input alınız. Girmiş olduğu
+#inputtaki rakamların toplamını veren bir program yazınız. 
+#(Kullanıcı rakam girmek zorunda değil.
+#farklı karakter girişi de yapabilir.)
+#Örnek input = "art12kl4*"
+
+print("""*******
+        Asagıdaki bosluklari eksiksiz doldurunuz.
+                                                *******
+            """)
+sayi=0
+bilgi=input("İcinde harf ve rakam olan biseyler yaziniz: ")
+for i in bilgi:
+    if i.isdigit()==True:  #inputtaki rakamlari secelim
+
+        sayi+=int(i) #islem toplamini 0'dan baslatırsak her sectigi rakami
+                            #ustune eklemesini saglayabiliriz
+    else : 
+        pass
+print("Girdiginiz bilgideki rakamlarin toplami: ",sayi)
+
+
+#4.odev
+# Futbolcular dosyasındaki futbolculardan ismi sesli
+#harf ile başlayanları ayrı bir dosyaya yazdırınız.
+
+try :
+    with open('futbolcular.txt','r') as dosya:
+        dosya.readline()
+        kaynak="aeiouöüAEIOUÖÜ"
+        for line in dosya: #dongu olusturup sesli harfle baslayanlari
+            for i in kaynak: #secmesini saglayalim
+                if line.startswith(i)==True:
+                    with open('futbolcularguncel.txt','a') as guncel: #bu isimleri yeni dosyaya kaydedelim
+                        guncel.write(line)
+                        with open('futbolcularguncel.txt','r') as guncel: #output olarak da verebiliriz.
+                            guncel.read()
+                            print(line)
+                        
+except FileNotFoundError:
+
+    print("Kaynak dosyanin dogru yerde oldugundan emin olun...")
+    
+    
+#5.odev
+#Futbolcular dosyasındaki futbolcu isimlerini yazdığınız program ile 
+#Türkçe karakter içermeyecek bir hale getirip yeni bir dosyaya kaydediniz.
+
+try :
+    with open('futbolcular.txt','r') as dosya: #dosyayi acalim
+        kaynak = "şçöğüıŞÇÖĞÜİ"
+        hedef = "scoguiSCOGUI"
+        cevir = str.maketrans(kaynak,hedef) #karakterleri cevirmek icin kaynak hedef gosterelim
+        for line in dosya:
+            yeni=line.translate(cevir) 
+            with open('futbolcular_yeni_karakterli.txt','a') as dosya: #yeni dosyaya kaydedelim
+                dosya.write(yeni)
+                with open('futbolcular_yeni_karakterli.txt','r') as dosya: #yeni dosyayı output olarak yazdıralım
+                    dosya.read()
+                    print(yeni)
+                
+except FileNotFoundError:
+    print("Kaynak dosyanin dogru yerde oldugundan emin olun...")
