@@ -1,4 +1,4 @@
-                    ##*ODEV 1: ADAM ASMACA*
+##*ODEV 1: ADAM ASMACA*
 ## -Onceden belirlenmis bir kelime degiskene atanacak ve kullanicidan bu kelimeyi harf tahminleriyle bilmesi istenecek.
 ## -Kullanicinin 6 hamle sansi olacak ve her bir yanlis hamlesinde kalan hamle sayisini gosterin. Ayrica yine her 
 ##bir yanlis hamle sonucunda adam asmaca oyunu oynarken cizdigimiz yanlis hamle sonucundaki cizimleri sizde ekranda 
@@ -36,29 +36,29 @@ resim = ["""
        +---+
        |   |
        |   O
-       |  /|
+       | ./|
        |
        |
      -----""","""
        +---+
        |   |
        |   O
-       |   |\
+       |   |\.
        |
        |
      -----""","""
        +---+
        |   |
        |   O
-       |  /|\
-       |  /
+       | ./|\.
+       | ./
        |
      -----""","""
        +---+
        |   |
        |   O
-       |  /|\
-       |  / \
+       | ./|\.
+       | ./ \.
        |
      -----"""]
 kelime="malesef"
@@ -105,10 +105,8 @@ while True:
         elif hak==6:
             print(resim[5])
         else:
-            print("Baska harf secmeye hakkiniz kalmadi.Cunku artik bir ölüsün.")
+            print("Baska harf secmeye hakkin kalmadi.Cunku artik bir ölüsün.")
             print("Game Over!!!")
             break
-
-    
 
     
