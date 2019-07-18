@@ -1,0 +1,93 @@
+                    # Asilacak adam resimleri hazirladik...
+resim = ["""         
+       +---+
+       |   |
+       |   O
+       |
+       |
+       |
+     -----""","""
+       +---+
+       |   |
+       |   O
+       |   |
+       |
+       |
+     -----""","""
+       +---+
+       |   |
+       |   O
+       |  /|
+       |
+       |
+     -----""","""
+       +---+
+       |   |
+       |   O
+       |   |\
+       |
+       |
+     -----""","""
+       +---+
+       |   |
+       |   O
+       |  /|\
+       |  /
+       |
+     -----""","""
+       +---+
+       |   |
+       |   O
+       |  /|\
+       |  / \
+       |
+     -----"""]
+kelime="malesef"
+cevap=["_","_","_","_","_","_","_",]
+hak=0
+while True:
+    print(("----->") + "Adam Asmaca Oyunu" + ("<-----"),"\n")
+    print("""         "Dogru kelimeyi bulmak icin harf
+            tahminlerinde bulunmanizi bunu da 6 denemeyi
+                gecmeyecek sekilde yapmanizi istiyoruz."
+
+                      İyi Eglenceler!!!
+                      """)
+    
+    sec=input("Bir harf giriniz: ").lower() #Harflerin kucuk harfe donusmesini sagladik.
+    sira=0
+    if sec in kelime:
+        for i in kelime:                # Dongu icinde harflerin eslesmesini kontrol
+            if i==sec:
+                cevap[sira]=sec
+                print(cevap)
+                sira+=1
+                continue
+            else:
+                sira+=1
+                continue
+
+                                        #Yanlis harf girdikce resmi yazdirmak
+    else:
+        hak+=1
+
+        print("Yanlis harf girdiniz... Lutfen yeniden deneyin","Kalan hakkiniz: ",6-hak)
+        
+        if hak==1:
+            print(resim[0])
+        elif hak==2:
+            print(resim[1])
+        elif hak==3:
+            print(resim[2])
+        elif hak==4:
+            print(resim[3])
+        elif hak==5:
+            print(resim[4])
+        elif hak==6:
+            print(resim[5])
+        else:
+            print("Baska harf secmeye hakkiniz kalmadi.Cunku artik bir ölüsün.")
+            print("Game Over!!!")
+            break
+
+    
