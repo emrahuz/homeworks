@@ -1,0 +1,79 @@
+##*TO DO LIST*
+##-Yapilacaklar listesi ve yapilanlar listesi seklinde iki bos liste olusturun.
+##Kullanicinin yapabilecegi islemler:
+##   *Yapilacaklar listesine gorev ekleme
+##       ->append metodu kullanilsin
+##   *Yapilacaklar listesinden gorev silme
+##       -> del metodu kullanilsin
+##   *Yapilacaklar listesindeki gorevi yapilanlar listesine atama
+##       -> pop metodu kullanilsin
+##   *Yapilanlar listesini goruntuleme
+##   *kullanıcı yapılacaklar listesinin içini boşaltma
+##       -> clear metodu kullanılsın
+##-Dongu her basa dondugunde yapilacaklar listesi goruntulensin
+##-Her iki liste goruntulenirken liste elemanlari numaralandirilarak verilsin
+##   ORN:
+##       Yapilacaklar Listesi:
+##           1- Python odevini yap.
+##           2- Alis-veris yapmaya git.
+##           3- Ahmet'i ara.
+##- Eger yapilacaklar listesi bos ise "Su an yapilacaklar listeniz bos"
+##seklinde bir cikti versin.
+print("""
+            Asagida yapmak istediginiz islemi seciniz:
+            1-Yapilacaklar listesine gorev ekleme
+            2-Yapilacaklar listesinden gorev silme
+            3-Yapilacaklar listesindeki gorevi yapilanlar
+              listesine atama
+            4-Yapilanlar listesini goruntuleme
+            5-Kullanıcı yapılacaklar listesinin içini boşaltma
+            
+            cikmak icin q'ya basiniz.
+            
+            """)
+yapilacaklar=[]
+yapilanlar=[]
+try:
+    while True:
+        print("\n","Yapilacak Gorev Listeniz: ","\n",yapilacaklar)
+        print("\n","Yapilan Gorev Listeniz: ","\n",yapilanlar,"\n")
+        islem=int(input("Yapmak istediginiz islemi seciniz: "))
+        if len(yapilacaklar)==0:
+            print("Su an Yapilacaklar Listeniz bos")
+##        if islem=="q" or islem=="Q":
+##            print("Cikiliyor...")
+##            break
+        else:
+            print("Yapilacak görevler...: \n",end="")
+            for i in yapilacaklar:
+                print(yapilacaklar.index(i)+1,i)
+        if islem==1:
+            yapilacaklar.append([input("Eklemek istediginiz gorevi yaziniz: ")])
+            for siralama in range(len(yapilacaklar)):
+                print("{}.{}".format(siralama,yapilacaklar[siralama]))     
+                continue
+        if islem==2:
+            del yapilacaklar[int(input("Silmek istediginiz gorevi seciniz: "))]
+            for siralama in range(len(yapilacaklar)):
+                print("{}.{}".format(siralama,yapilacaklar[siralama]))
+                continue
+        if islem==3:
+            aktar=yapilacaklar.pop(int(input("Yapilanlar listesine atamak istediginiz gorevi secin: ")))
+            yapilanlar.append(aktar)
+            for siralama in range(len(yapilanlar)):
+                print("{}.{}".format(siralama,yapilanlar[siralama]))
+        if islem==4:
+            if len(yapilanlar)==0:
+                print("Su an Yapilanlar Listeniz bos")
+            else:
+                print("Yapilan Gorev Listeniz: ",yapilanlar)
+        if islem==5:
+            yapilacaklar.clear()
+            print("Yapilacaklar listenizde hic gorev kalmadi.Hadi gecmis olsun.")
+            continue
+except:
+    print("Bir hata olustu, lutfen tekrar deneyiniz...")
+    
+        
+        
+
